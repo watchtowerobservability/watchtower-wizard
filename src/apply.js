@@ -5,7 +5,7 @@ import { spawnSync } from "node:child_process";
 const readOr = (f) => (existsSync(f) ? readFileSync(f, "utf8") : null);
 
 /** Env lines whose names are in `secrets` are masked wherever a change is displayed. */
-const mask = (text, names) => text.replace(new RegExp(`^((?:${names.join("|")})=).*$`, "gm"), "$1***");
+const mask = (text, names) => text.replace(new RegExp(`^([-+ ]?(?:${names.join("|")})=).*$`, "gm"), "$1***");
 
 /**
  * Pure: turns a plan + secrets into file changes [{path, before, after, skipped?}].
