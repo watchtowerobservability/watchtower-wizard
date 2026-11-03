@@ -13,9 +13,6 @@ npx @watchtowerobservability/wizard --dry-run  # print the diff, change nothing
 npx @watchtowerobservability/wizard verify     # send a test span
 ```
 
-The packages come from GitHub Packages; point the scope at it first:
-`echo "@watchtowerobservability:registry=https://npm.pkg.github.com" >> .npmrc`.
-
 The key is typed at a hidden prompt (or read from `WT_INGEST_KEY` / `WT_PUBLISHABLE_KEY` in the
 environment). It is never a command-line flag, and it is written only to `.env.local`, which the
 wizard adds to `.gitignore`. Client apps need a publishable key (`wtp_...`); servers a secret ingest key.

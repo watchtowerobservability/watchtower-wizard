@@ -2,7 +2,10 @@
   "name": "@watchtowerobservability/wizard",
   "version": "0.1.0",
   "repository": { "type": "git", "url": "git+https://github.com/watchtowerobservability/watchtower-wizard.git" },
-  "publishConfig": { "registry": "https://npm.pkg.github.com" },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "description": "Setup wizard: detects your project, installs the Watchtower SDK and wires up init and upload (plain JavaScript)",
   "type": "module",
   "bin": { "wizard": "bin/wizard.js" },
