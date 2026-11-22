@@ -131,8 +131,8 @@ test("requirements.txt gets the dependency appended once", () => {
   const p = plan(detect(dir));
   const cs = changes(dir, p, {});
   const req = cs.find((c) => c.path === "requirements.txt");
-  assert.equal(req.after, "flask\nwatchtower-sdk\n");
-  assert.match(render(req), /\+watchtower-sdk/);
+  assert.equal(req.after, "flask\nwatchtower-observability\n");
+  assert.match(render(req), /\+watchtower-observability/);
 });
 
 test("gradle and maven dependencies are inserted", () => {

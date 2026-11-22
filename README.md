@@ -24,7 +24,7 @@ wizard adds to `.gitignore`. Client apps need a publishable key (`wtp_...`); ser
 | `package.json` with next, vite, react, vue, angular, sveltekit, webpack | `@watchtowerobservability/browser` | `src/watchtower.(ts\|js)`; Vite config patched with the source-map plugin; other bundlers get a printed step |
 | `package.json` with express, fastify, koa, nestjs | `@watchtowerobservability/node` | `watchtower.js` |
 | `go.mod` | `watchtower-go` | `watchtower.go` |
-| `pyproject.toml` / `requirements.txt` | `watchtower-sdk` | `watchtower_setup.py` (and `requirements.txt`) |
+| `pyproject.toml` / `requirements.txt` | `watchtower-observability` | `watchtower_setup.py` (and `requirements.txt`) |
 | `Gemfile` | `watchtower-sdk` gem | `config/initializers/watchtower.rb` |
 | `composer.json` | `watchtowerobservability/sdk` | `watchtower.php` |
 | `pom.xml`, `build.gradle(.kts)` | Java SDK dependency inserted | printed init and mapping-upload steps |

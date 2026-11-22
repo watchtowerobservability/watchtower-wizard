@@ -67,12 +67,12 @@ const BUILDERS = {
     notes: [`Load .env.local before running: set -a; . ./.env.local; set +a`],
   }),
   python: (p) => ({
-    install: [["pip", "install", "watchtower-sdk"]],
+    install: [["pip", "install", "watchtower-observability"]],
     edits: [
       { op: "write", path: "watchtower_setup.py", content: `import os\nimport watchtower\n\nwatchtower.init(os.environ["WT_INGEST_KEY"], project=os.environ["WT_PROJECT_ID"], buffer_dir=".wt-buffer")\n` },
-      ...(p.file === "requirements.txt" ? [{ op: "append", path: "requirements.txt", content: "watchtower-sdk\n" }] : []),
+      ...(p.file === "requirements.txt" ? [{ op: "append", path: "requirements.txt", content: "watchtower-observability\n" }] : []),
     ],
-    notes: [`Import watchtower_setup before your app code.`, ...(p.file === "pyproject.toml" ? [`Add "watchtower-sdk" to your pyproject.toml dependencies.`] : []), `Load .env.local with python-dotenv or: set -a; . ./.env.local; set +a`],
+    notes: [`Import watchtower_setup before your app code.`, ...(p.file === "pyproject.toml" ? [`Add "watchtower-observability" to your pyproject.toml dependencies.`] : []), `Load .env.local with python-dotenv or: set -a; . ./.env.local; set +a`],
   }),
   ruby: () => ({
     install: [["bundle", "add", "watchtower-sdk"]],
